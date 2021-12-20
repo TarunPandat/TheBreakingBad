@@ -10,7 +10,7 @@ const Layout = ({router, ...props}) => {
     </SafeAreaView>
   ) : (
     <View style={styles.container}>
-      <Component {...{props, router}} />
+      <Component {...{...props, ...router}} />
     </View>
   )
 }

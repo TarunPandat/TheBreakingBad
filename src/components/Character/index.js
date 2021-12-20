@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {
   View,
@@ -7,11 +8,16 @@ import {
   useWindowDimensions,
 } from 'react-native'
 import constant from '../../constants'
+import {RoutesName} from '../../navigation/route.config'
 
 const Character = ({item, addToFav, favChar}) => {
   const {width} = useWindowDimensions()
+
+  const {navigate} = useNavigation()
+
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => navigate(RoutesName.CharacterDetail, item)}
       style={{
         width: width * 0.5,
         height: 310,
@@ -43,21 +49,18 @@ const Character = ({item, addToFav, favChar}) => {
             {item?.nickname}
           </Text>
         </View>
-        <TouchableOpacity
-        onPress={() => addToFav(item?.char_id)}
-        >
+        <TouchableOpacity onPress={() => addToFav(item?.char_id)}>
           <Image
-            
-              source={
-                favChar?.includes(item?.char_id) || item?.fav
-                  ? constant.images.heartFilled
-                  : constant.images.heart
-              }
+            source={
+              favChar?.includes(item?.char_id) || item?.fav
+                ? constant.images.heartFilled
+                : constant.images.heart
+            }
             style={{marginVertical: 10}}
           />
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

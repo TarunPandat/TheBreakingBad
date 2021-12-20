@@ -1,0 +1,1 @@
+export {default as CharacterDetail} from './containers/CharacterDetail'

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Text} from 'react-native'
 import constant from '../constants'
+import {CharacterDetail} from '../Screens/CharacterDetail'
 import {Favourite} from '../Screens/Favourite'
 import {Home} from '../Screens/Home'
 import {Search} from '../Screens/Search'
@@ -9,6 +10,7 @@ export const RoutesName = {
   Home: 'Home',
   Search: 'Search',
   Favourite: 'Favourite',
+  CharacterDetail: 'CharacterDetail',
 }
 
 export const Routes = {
@@ -58,6 +60,17 @@ export const Routes = {
           Favourites
         </Text>
       ),
+    },
+  },
+  CharacterDetail: {
+    name: RoutesName.Favourite,
+    component: CharacterDetail,
+    safeArea: false,
+    options: {
+      title: '',
+      headerTitleAlign: 'left',
+      headerTintColor: constant.colors.White,
+      headerTransparent: true,
     },
   },
 }

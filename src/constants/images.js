@@ -3,4 +3,5 @@ export default {
   heartFilled: require('../assets/images/HEART_FILLED.png'),
   search: require('../assets/images/search-icon.png'),
   cancel: require('../assets/images/cancel.png'),
+  gift: require('../assets/images/gift.png'),
 }

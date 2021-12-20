@@ -23,6 +23,11 @@ const Navigation = () => {
           options={Routes.Favourite.options}>
           {props => <Layout router={Routes.Favourite} {...props} />}
         </Stack.Screen>
+        <Stack.Screen
+          name={RoutesName.CharacterDetail}
+          options={Routes.CharacterDetail.options}>
+          {props => <Layout router={Routes.CharacterDetail} {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   )
